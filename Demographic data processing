@@ -1,0 +1,40 @@
+import pandas as pd
+data=pd.read_csv('D:/Python/demograph.csv')
+race = data.filter(like='race')
+print(race)
+#question 1 answer 
+race.unique()
+#question 2 answer 
+age=data.filter(like='age').avg()
+print(age)
+#question 3 answer 
+education = data.filter(like='education ')
+batch = education.filter(like='Bachelors').count()
+total = batch/education*100
+print(total)
+#question 4 answer 
+education = data.filter(like='education ')
+batch = education.filter(like='Bachelors' or ' Masters' or 'Doctorate').count()
+k50 = batch.filter(like='50')
+total = k50/education*100
+print(total)
+#question 5 answer 
+education = data.filter(like='education ')
+batch = education.filter(not like='Bachelors' or ' Masters' or 'Doctorate').count()
+k50 = batch.filter(like='50')
+total = k50/education*100
+print(total)
+#question 6 answer
+Hours = data.filter(like='week').min()
+print(Hours)
+#question 7 answer
+Hours =data.filter(like='week').min().filter(like='50')
+print(Hours)
+#question 8 answer
+country=data.filter(like='native')
+value = country.max()
+percent = value/country*100
+print(country, percent)
+#question 9 answer
+occu = data.filter(like='occupation' and '50').max()
+print(occu)
