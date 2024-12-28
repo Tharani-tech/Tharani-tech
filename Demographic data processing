@@ -1,13 +1,22 @@
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-df = pd.read_csv("Medicalexamination.csv", 'w')
-preweight = df.filter(like ='weight' and 'variable')
-weight = preweight / 100
-height = df.filter(like ='height' and 'variable')
-BMI = weight / (height**2)
-if BMI >25:
-    print(1)
-else:
-    print(0)
-df = {'Overweight' : 'BMI'}
+import numpy as np
+import matplotlib.pyplot as ply
+df = pd.read_csv("fcc-forum-pageviews.csv", 'w')
+missing = df.isnull()
+missing = 0
+plt.plot('date', 'page_views')
+plt.title("Daily freeCodeCamp Forum Page Views 5/2016-12/2019")
+plt.lablex("Date")
+plt.labley('Page Views')
+plt.show()
+
+plt.bar('years', 'average_page_views')
+lt.lablex("Years")
+plt.labley('Average Page Views')
+plt.title("Months")
+
+lt.box('x', 'y')
+plt.title("Year-wise Box Plot (Trend)")
+plt.title("Month-wise Box Plot (Seasonality)")
+plt.lablex("x")
+plt.labley('y')
