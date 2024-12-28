@@ -1,22 +1,17 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as ply
-df = pd.read_csv("fcc-forum-pageviews.csv", 'w')
+import scipy.starts()
+df = pd.read_csv("epa_sea_level.csv", 'w')
 missing = df.isnull()
 missing = 0
-plt.plot('date', 'page_views')
-plt.title("Daily freeCodeCamp Forum Page Views 5/2016-12/2019")
-plt.lablex("Date")
-plt.labley('Page Views')
+plt.scatterplot('Year', 'CSIRO Adjusted Sea Levels')
+plt.lablex("Years")
+plt.labley('PCSIRO Adjusted Sea Level')
 plt.show()
-
-plt.bar('years', 'average_page_views')
-lt.lablex("Years")
-plt.labley('Average Page Views')
-plt.title("Months")
-
-lt.box('x', 'y')
-plt.title("Year-wise Box Plot (Trend)")
-plt.title("Month-wise Box Plot (Seasonality)")
-plt.lablex("x")
-plt.labley('y')
+lineregress.scipy.starts(slope, yintercept)
+plt.scatterplot('Year', 'CSIRO Adjusted Sea Levels')
+plt.lablex("Years")
+plt.labley('Sea Level (inches)')
+plt.title('Rise in Sea Level')
+plt.show()
